@@ -15,12 +15,17 @@ const showTodo = () => {
     const li = document.createElement("li");
     li.innerHTML = `<strong>${
       todo.isCompleted ? "<del>" + todo.title + "</del>" : todo.title
-    }</strong><span><button onclick='editTodo(${
+    }</strong><span class='btn_wrapper'><button onclick='editTodo(${
       todo.id
-    })'>E</button><button onclick='completeTodo(${
+    })' style='background-color: #f5d120'><i class="fa-solid fa-pen-to-square"></i></button>
+    <button onclick='completeTodo(${
       todo.id
-    })'>C</button><button onclick='deleteTodo(${todo.id})'>D</button></span>`;
+    })' style='background-color: #19fa33'><i class="fa-solid fa-circle-check"></i></button>
+    <button onclick='deleteTodo(${
+      todo.id
+    })' style='background-color: #f54720'><i class="fa-solid fa-trash-can"></i></button></span>`;
 
+    li.className = "list_item";
     todosWrap.appendChild(li);
   });
 
